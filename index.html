@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cheque Back Print</title>
+    <style>    
+      *
+      {
+        margin: 0px;
+        font: 12pt "Calibri";
+        /* line-height: 190%; */
+      }
+      
+      .page
+      {
+        width: 12cm;
+        height: 5.4cm;
+        padding-left: 0.5cm; 
+        padding-right: 1.1cm; 
+        border: 1px #D3D3D3 solid;
+
+      }
+      
+      .font-bold
+      {
+        font-weight: bold;
+      }
+
+      .grid-container
+      {
+        display: grid;
+        grid-template-columns: 7cm auto;
+      }
+
+      .grid-item
+      {
+        padding: 6px 0px;
+        /* background-color: burlywood;
+        border: 0.5px solid cadetblue; */
+      }
+
+    </style>
+
+</head>
+<body>
+    <div class="book">
+      <div class="page">
+        <form action="GenerateView.php" method="GET">
+          <div class="grid-container">
+            <div class="grid-item">BENEFICIARY ACCOUNT NO.</div>
+            <div class="grid-item font-bold">: <input id="acno" name="acno" type="text"/></div>
+            <div class="grid-item">BENEFICIARY NAME</div>  
+            <div class="grid-item">: <input id="bname" name="bname" type="text"/></div>
+            <div class="grid-item">BENEFICIARY BANK NAME</div>
+            <div class="grid-item">: <input id="bankname" name="bankname" type="text"/></div>  
+            <div class="grid-item">BENEFICIARY IFSC CODE</div>
+            <div class="grid-item font-bold">: <input id="ifsc" name="ifsc" type="text"/></div>
+            <div class="grid-item">DEBIT AMOUNT</div>
+            <div class="grid-item font-bold">: <input id="amount" name ="amount" type="text"/></div>
+          </div>
+      </div>
+    </div>
+    <button id="print-button" onclick="window.print();">Print</button>
+    <input type="submit" value="Submit">
+  </form>
+</body>
+</html>
+
